@@ -8,6 +8,7 @@ on:
 permissions:
   id-token: write
   contents: write
+  pages: write  # Permiso adicional para GitHub Pages
 
 jobs:
   deploy:
@@ -21,9 +22,9 @@ jobs:
       uses: actions/configure-pages@v2
 
     - name: Upload to GitHub Pages
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v4  # Actualiza a v4
       with:
-        path: ./Backend
+        path: ./Backend  # Cambia "./Backend" según la ruta de tus archivos
 
     - name: Deploy to GitHub Pages
       uses: actions/deploy-pages@v2
