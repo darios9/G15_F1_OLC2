@@ -22,7 +22,7 @@ jobs:
       uses: actions/configure-pages@v2
 
     - name: Upload to GitHub Pages
-      uses: actions/upload-pages-artifact@v4  # Actualiza a v4
+      uses: actions/upload-pages-artifact@v1  # Corrección: usa v1
       with:
         path: ./Backend  # Cambia "./Backend" según la ruta de tus archivos
 
