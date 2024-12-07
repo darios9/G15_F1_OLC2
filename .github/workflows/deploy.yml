@@ -23,7 +23,7 @@ jobs:
     - name: Upload to GitHub Pages
       uses: actions/upload-pages-artifact@v1
       with:
-        path: ./Backend  # Cambia "./Backend" según la ruta de tus archivos
+        path: ./Backend
 
     - name: Deploy to GitHub Pages
       uses: actions/deploy-pages@v2
