@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: beige;
+}
+
+.container {
+    display: flex; /* Usar flexbox para alinear los elementos */
+    justify-content: space-between; /* Espacio entre los textarea */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+}
+
+.input-area {
+    margin-right: 20px; /* Espacio entre los textarea */
+    flex: 1; /* Hacer que cada área ocupe el mismo espacio */
+}
+
+textarea {
+    width: 100%; /* Hacer que el textarea ocupe todo el ancho disponible */
+    height: 450px;
+    padding: 10px; /* Espaciado interno para el texto */
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    color: white; /* Color del texto */
+    background-color: #007BFF; /* Color de fondo */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+button:active {
+    background-color: #004085; /* Color de fondo al hacer clic */
+}
