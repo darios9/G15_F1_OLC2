@@ -3,7 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Cambia "main" si tu rama principal tiene otro nombre, como "master"
+      - main  # Cambia "main" si tu rama principal tiene otro nombre
+
+permissions:
+  id-token: write
+  contents: write
 
 jobs:
   deploy:
@@ -19,7 +23,7 @@ jobs:
     - name: Upload to GitHub Pages
       uses: actions/upload-pages-artifact@v1
       with:
-        path: ./Backend
+        path: ./Backend  # Cambia "./Backend" según la ruta de tus archivos
 
     - name: Deploy to GitHub Pages
       uses: actions/deploy-pages@v2
