@@ -1,22 +1,20 @@
-const parser = require('./bundle.js');
+import { StartRules, SyntaxError, parse } from './grammar.js'; // Asegúrate de que la ruta sea correcta
 
-document.addEventListener('DOMContentLoaded', function() {
-    const checkButton = document.getElementById('checkButton');
-    const inputPEG = document.getElementById('inputPEG');
-    const resultPEG = document.getElementById('resultPEG');
+document.getElementById("checkButton").addEventListener("click", function() {
+    const input = document.getElementById("inputPEG").value; // Obtener la entrada del primer textarea
+    console.log("Entrada del usuario:", input); // Mostrar la entrada en la consola
 
-    checkButton.addEventListener('click', function() {
-        const inputText = inputPEG.value;
-        try {
-           const result = parser.parse(inputText);
-           console.log(result); 
-           resultPEG.value = result; // Muestra el contenido de la entrada en el área de resultado
-        } catch (error) {
-            console.error(error);
-            resultPEG.value = error.message;
-            return;
-        }
+    try {
+        // Parsear la entrada del usuario usando el parser generado
+        const result = parse(input); // Usa 'parse' como el nombre correcto
         
-        
-    });
+        // Mostrar el resultado en el segundo textarea
+        document.getElementById("resultPEG").value = "Todo bien";
+        //document.getElementById("resultPEG").value = JSON.stringify(result, null, 2); // Convertir el resultado a texto con formato
+        console.log("Resultado:", result); // Mostrar el resultado en la consola
+    } catch (e) {
+        // Manejar errores de parseo
+        document.getElementById("resultPEG").value = "Error: " + e.message; // Mostrar error en el segundo textarea
+        console.error("Error de parseo:", e.message); // Mostrar error en la consola
+    }
 });
