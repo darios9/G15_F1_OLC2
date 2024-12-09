@@ -5,40 +5,77 @@ body {
 }
 
 .container {
-    display: flex; /* Usar flexbox para alinear los elementos */
-    justify-content: space-between; /* Espacio entre los textarea */
-    margin: 0 auto; /* Centrar el contenedor en la página */
-    max-width: 1200px; /* Ancho máximo del contenedor */
+    display: flex; 
+    justify-content: space-between; 
+    margin: 0 auto; 
+    max-width: 1200px; 
 }
 
 .input-area {
-    margin-right: 20px; /* Espacio entre los textarea */
-    flex: 1; /* Hacer que cada área ocupe el mismo espacio */
+    margin-right: 20px; 
+    flex: 1; 
 }
 
 textarea {
-    width: 100%; /* Hacer que el textarea ocupe todo el ancho disponible */
+    width: 100%; 
     height: 450px;
-    padding: 10px; /* Espaciado interno para el texto */
-    box-sizing: border-box; /* Incluir padding en el ancho total */
+    padding: 10px; 
+    box-sizing: border-box; 
 }
 
 button {
     margin-top: 10px;
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 16px; /* Tamaño de la fuente */
-    color: white; /* Color del texto */
-    background-color: #007BFF; /* Color de fondo */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    padding: 10px 20px; 
+    font-size: 16px; 
+    color: white; 
+    background-color: #007BFF;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
 }
 
 button:hover {
-    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+    background-color: #0056b3; 
 }
 
 button:active {
-    background-color: #004085; /* Color de fondo al hacer clic */
+    background-color: #004085; 
+}
+
+/* Estilos para el Navbar */
+.navbar {
+    background-color: #007BFF; /* Color de fondo del navbar */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+}
+
+.navbar .container {
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre el título y los enlaces */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.navbar-title {
+    margin: 0; /* Eliminar margen del título */
+}
+
+.navbar-links {
+    list-style-type: none; /* Eliminar viñetas de la lista */
+    margin: 0; /* Eliminar margen */
+    padding: 0; /* Eliminar padding */
+}
+
+.navbar-links li {
+    display: inline; /* Mostrar enlaces en línea */
+    margin-left: 20px; /* Espacio entre enlaces */
+}
+
+.navbar-links a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+}
+
+.navbar-links a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
 }
