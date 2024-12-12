@@ -1,4 +1,4 @@
-import { StartRules, SyntaxError, parse } from './grammar.js'; // Asegúrate de que la ruta sea correcta
+import { StartRules, SyntaxError, parse } from './grammar.js'; 
 
 document.getElementById("checkButton").addEventListener("click", function() {
     const input = document.getElementById("inputPEG").value; // Obtener la entrada del primer textarea
