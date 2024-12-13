@@ -1,14 +1,14 @@
 grammar
-  = rule+ nl
+  = rule+ _
 
 rule
-  = nl identifier nl string? nl "=" _ choice nl (_";"_)?
+  = _ identifier _ string? _ "=" _ choice (_ ";")?
   
 choice
-  = concatenation (nl "/" nl concatenation)*
+  = concatenation (_ "/" _ concatenation)*
 
 concatenation
-  = pluck (_ pluck)*
+  = pluck (_ pluck !(_ string? _ "="))*
 
 pluck
   = "@"? _ label
@@ -33,8 +33,8 @@ parsingExpression
   / group
   / anyChar
   / endOfInput
-  / positiveAssertion // Aserción positiva
-  / negativeAssertion // Aserción negativa
+  / positiveAssertion 
+  / negativeAssertion 
 
 group
   = "(" _ choice _ ")"
@@ -45,15 +45,12 @@ anyChar
 
 endOfInput 
   = "!." {
-      // Retorna un objeto indicando que se ha llegado al final de la entrada.
       return { type: "endOfInput" };
     }
 
-// Aserción positiva (& expresión)
 positiveAssertion 
   = "&" _ expr:expression { return { type: "positiveAssertion", expression: expr }; }
 
-// Aserción negativa (! expresión)
 negativeAssertion 
   = "!" _ expr:expression { return { type: "negativeAssertion", expression: expr }; }
 
@@ -69,10 +66,7 @@ input_range = [^[\]-] "-" [^[\]-]
 identifier "identificador"
   = [_a-z]i[_a-z0-9]i*
 
-_ "espacios en blanco"
-  = [ \t]*
-
-nl "nueva linea"
+_ "Espacios en blanco"
   = [ \t\n\r]*
 
 number
